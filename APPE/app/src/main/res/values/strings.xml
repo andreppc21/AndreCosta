@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">APPE</string>
+    <string name="txt_hint_fabricante">Fabricante</string>
+    <string name="txt_cadastro">\"cadastro\"</string>
+    <string name="txt_hint_titulo">cadastro\n</string>
+    <string name="txt_hint_modelo">Modelo</string>
+    <string name="txt_hint_escala">Escala (Ex: 1/24)</string>
+    <string name="txt_hint_categoria">Categoria</string>
+    <string name="btn_txt_salvar">Salvar</string>
+
 </resources>
