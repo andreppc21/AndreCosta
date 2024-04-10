@@ -7,5 +7,8 @@
     <string name="txt_hint_escala">Escala (Ex: 1/24)</string>
     <string name="txt_hint_categoria">Categoria</string>
     <string name="btn_txt_salvar">Salvar</string>
+    <string name="btn_txt_finalizar">Finalizar</string>
+    <string name="btn_txt_limpar">Limpar</string>
+
 
 </resources>

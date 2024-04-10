@@ -45,17 +45,14 @@ public CadastroKit(){
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "CadastroKit{" +
+                "fabricante='" + fabricante + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", escala='" + escala + '\'' +
+                ", categoria='" + categoria + '\'' +
+                '}';
+    }
 }
 

@@ -5,7 +5,7 @@ public class Jurado {
     private String nome;
     private String idade;
 
-    public Jurado(String nome,String idade){
+    public Jurado(){
 
 
     }
@@ -24,5 +24,13 @@ public class Jurado {
 
     public void setIdade(String idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return "Jurado{" +
+                "nome='" + nome + '\'' +
+                ", idade='" + idade + '\'' +
+                '}';
     }
 }
