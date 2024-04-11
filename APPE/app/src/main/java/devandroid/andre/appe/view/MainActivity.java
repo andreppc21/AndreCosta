@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import devandroid.andre.appe.R;
+import devandroid.andre.appe.controller.CadastroKitController;
 import devandroid.andre.appe.model.CadastroKit;
 import devandroid.andre.appe.model.Jurado;
 
 public class MainActivity extends AppCompatActivity {
+    CadastroKitController cadastroController;
     CadastroKit cadastroKit;
     Jurado jurado;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        cadastroController = new CadastroKitController();
         cadastroKit = new CadastroKit();
         jurado = new Jurado();
 
@@ -79,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                 cadastroKit.setEscala(editEscala.getText().toString());
                 cadastroKit.setCategoria(editCategoria.getText().toString());
                 Toast.makeText(MainActivity.this, "salto" + cadastroKit.toString(), Toast.LENGTH_LONG).show();
+
+                cadastroController.salvar(cadastroKit);
 
 
             }
