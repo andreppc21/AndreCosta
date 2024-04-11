@@ -2,6 +2,7 @@ package devandroid.andre.appe.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,9 @@ import devandroid.andre.appe.model.CadastroKit;
 import devandroid.andre.appe.model.Jurado;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+    public final static String APPE_PREFERENCE = "pref_appe";
     CadastroKitController cadastroController;
     CadastroKit cadastroKit;
     Jurado jurado;
@@ -31,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        preferences = getSharedPreferences(APPE_PREFERENCE,0);
+        SharedPreferences.Editor listaKit = preferences.edit();
+
         cadastroController = new CadastroKitController();
         cadastroKit = new CadastroKit();
         jurado = new Jurado();
@@ -80,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 cadastroKit.setEscala(editEscala.getText().toString());
                 cadastroKit.setCategoria(editCategoria.getText().toString());
                 Toast.makeText(MainActivity.this, "salto" + cadastroKit.toString(), Toast.LENGTH_LONG).show();
+
+
+                listaKit.putString("fabricante:",cadastroKit.getFabricante());
+                listaKit.putString("modelo:", cadastroKit.getModelo());
+                listaKit.putString("escala:", cadastroKit.getEscala());
+                listaKit.putString("categoria:", cadastroKit.getCategoria());
+                listaKit.apply();
+
 
                 cadastroController.salvar(cadastroKit);
 
