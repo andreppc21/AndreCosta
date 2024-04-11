@@ -34,19 +34,11 @@ public class MainActivity extends AppCompatActivity {
         cadastroController = new CadastroKitController();
         cadastroKit = new CadastroKit();
         jurado = new Jurado();
-        String dadosKit;
-        String dadosJurado;
 
         jurado.setNome("andré");
         jurado.setIdade("30");
         System.out.println("olá");
 
-        cadastroController.toString();
-
-       /* cadastroKit.setFabricante("tamiya");
-        cadastroKit.setModelo("F15 alguma coisa");
-        cadastroKit.setEscala("1/48");
-        cadastroKit.setCategoria("aviação jato 1/48");*/
 
         editFabricante = findViewById(R.id.editFabricante);
         editEscala = findViewById(R.id.editEscala);
@@ -58,12 +50,10 @@ public class MainActivity extends AppCompatActivity {
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
 
-
         editFabricante.setText(cadastroKit.getFabricante());
         editModelo.setText(cadastroKit.getModelo());
         editEscala.setText(cadastroKit.getEscala());
         editCategoria.setText(cadastroKit.getCategoria());
-
 
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
@@ -100,18 +90,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Log.i("POOAndroid","info jurados:"+jurado.toString());
-        Log.i("POO android","cadastro kits: "+cadastroKit.toString());
-
-
-
-
-
-
-
-
-
-
+        Log.i("POOAndroid", "info jurados:" + jurado.toString());
+        Log.i("POO android", "cadastro kits: " + cadastroKit.toString());
 
 
     }
