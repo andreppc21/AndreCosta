@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         jurado.setNome("andré");
         jurado.setIdade("30");
-        System.out.println("olá");
-
 
         editFabricante = findViewById(R.id.editFabricante);
         editEscala = findViewById(R.id.editEscala);
