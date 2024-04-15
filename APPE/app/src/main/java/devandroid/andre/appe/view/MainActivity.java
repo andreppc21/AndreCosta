@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         editEscala.setText(cadastroKit.getEscala());
         editCategoria.setText(cadastroKit.getCategoria());
 
+        cadastroController.buscar(cadastroKit);
 
 
 
