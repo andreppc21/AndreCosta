@@ -18,6 +18,7 @@ import devandroid.andre.appe.model.Jurado;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
+    SharedPreferences.Editor listaKit;
     public final static String APPE_PREFERENCE = "pref_appe";
     CadastroKitController cadastroController;
     CadastroKit cadastroKit;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         preferences = getSharedPreferences(APPE_PREFERENCE,0);
-        SharedPreferences.Editor listaKit = preferences.edit();
+        listaKit = preferences.edit();
 
         cadastroController = new CadastroKitController();
         cadastroKit = new CadastroKit();
@@ -75,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 editModelo.setText("");
                 editEscala.setText("");
                 editCategoria.setText("");
+
+                listaKit.clear();
+                listaKit.apply();
             }
         });
 
