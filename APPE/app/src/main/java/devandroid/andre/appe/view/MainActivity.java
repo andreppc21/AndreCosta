@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "OBRIGADO", Toast.LENGTH_LONG).show();
                 finish();
+
             }
         });
 
