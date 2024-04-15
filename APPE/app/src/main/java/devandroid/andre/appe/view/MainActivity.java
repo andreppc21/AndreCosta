@@ -17,9 +17,8 @@ import devandroid.andre.appe.model.Jurado;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
-    SharedPreferences.Editor listaKit;
-    public final static String APPE_PREFERENCE = "pref_appe";
+
+
     CadastroKitController cadastroController;
     CadastroKit cadastroKit;
     Jurado jurado;
@@ -37,16 +36,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(APPE_PREFERENCE,0);
-        listaKit = preferences.edit();
 
-        cadastroController = new CadastroKitController();
+
+        cadastroController = new CadastroKitController(MainActivity.this);
         cadastroKit = new CadastroKit();
 
-        cadastroKit.setCategoria(preferences.getString("categoria",""));
-        cadastroKit.setFabricante(preferences.getString("fabricante",""));
-        cadastroKit.setModelo(preferences.getString("modelo",""));
-        cadastroKit.setEscala(preferences.getString("escala",""));
+
 
 
 
@@ -77,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 editEscala.setText("");
                 editCategoria.setText("");
 
-                listaKit.clear();
-                listaKit.apply();
+                cadastroController.limpar();
             }
         });
 
@@ -87,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "OBRIGADO", Toast.LENGTH_LONG).show();
                 finish();
+
             }
         });
 
@@ -98,14 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 cadastroKit.setEscala(editEscala.getText().toString());
                 cadastroKit.setCategoria(editCategoria.getText().toString());
                 Toast.makeText(MainActivity.this, "salto" + cadastroKit.toString(), Toast.LENGTH_LONG).show();
-
-
-                listaKit.putString("fabricante:",cadastroKit.getFabricante());
-                listaKit.putString("modelo:", cadastroKit.getModelo());
-                listaKit.putString("escala:", cadastroKit.getEscala());
-                listaKit.putString("categoria:", cadastroKit.getCategoria());
-                listaKit.apply();
-
 
                 cadastroController.salvar(cadastroKit);
 
