@@ -4,6 +4,10 @@ public class Categoria {
 
     private String categoriaDesejada;
 
+    public Categoria (String categoriaDesejada){
+        this.categoriaDesejada = categoriaDesejada;
+    }
+
     public String getCategoriaDesejada() {
         return categoriaDesejada;
     }

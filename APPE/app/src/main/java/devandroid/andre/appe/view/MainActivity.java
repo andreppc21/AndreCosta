@@ -10,14 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import devandroid.andre.appe.R;
+import devandroid.andre.appe.controller.CadastroCategoriaController;
 import devandroid.andre.appe.controller.CadastroKitController;
 import devandroid.andre.appe.model.CadastroKit;
+import devandroid.andre.appe.model.Categoria;
 import devandroid.andre.appe.model.Jurado;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    CadastroCategoriaController cadastroCategoriaController;
+    List<Categoria> listaDeCategorias;
 
     CadastroKitController cadastroController;
     CadastroKit cadastroKit;
@@ -40,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
         cadastroController = new CadastroKitController(MainActivity.this);
         cadastroKit = new CadastroKit();
+
+        cadastroCategoriaController = new CadastroCategoriaController();
+        listaDeCategorias = cadastroCategoriaController.getListaDeCategorias();
+
 
 
 
