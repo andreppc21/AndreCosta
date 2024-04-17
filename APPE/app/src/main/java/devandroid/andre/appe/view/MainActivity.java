@@ -2,27 +2,32 @@ package devandroid.andre.appe.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.List;
+
 import devandroid.andre.appe.R;
+import devandroid.andre.appe.controller.CadastroCategoriaController;
 import devandroid.andre.appe.controller.CadastroKitController;
 import devandroid.andre.appe.model.CadastroKit;
 import devandroid.andre.appe.model.Jurado;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    CadastroCategoriaController cadastroCategoriaController;
+    List<String> nomeDasCategorias;
 
     CadastroKitController cadastroController;
     CadastroKit cadastroKit;
     Jurado jurado;
-
+    Spinner spinner;
     EditText editFabricante;
     EditText editEscala;
     EditText editModelo;
@@ -41,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
         cadastroController = new CadastroKitController(MainActivity.this);
         cadastroKit = new CadastroKit();
 
+        cadastroCategoriaController = new CadastroCategoriaController();
+        nomeDasCategorias = cadastroCategoriaController.dadosParaSpinner();
+
+
 
 
 
@@ -50,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         editEscala = findViewById(R.id.editEscala);
         editModelo = findViewById(R.id.editModelo);
         editCategoria = findViewById(R.id.editCategoria);
+        spinner = findViewById(R.id.spinner);
+
 
         btnLimpar = findViewById(R.id.btnlimpar);
         btnSalvar = findViewById(R.id.btnSalvar);
@@ -62,6 +73,17 @@ public class MainActivity extends AppCompatActivity {
         editCategoria.setText(cadastroKit.getCategoria());
 
         cadastroController.buscar(cadastroKit);
+
+        //adapter
+        //layout
+        //injetar o adapter ao Spinner  - a lista sera gerada
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+                cadastroCategoriaController.dadosParaSpinner());
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(adapter);
+
+
 
 
 
