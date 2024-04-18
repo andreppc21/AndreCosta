@@ -9,6 +9,7 @@
     <string name="btn_txt_salvar">Salvar</string>
     <string name="btn_txt_finalizar">Finalizar</string>
     <string name="btn_txt_limpar">Limpar</string>
+    <string name="txt_selecione_uma_categoria">selecione uma categoria</string>
 
 
 </resources>

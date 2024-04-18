@@ -51,7 +51,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editModelo" />
+        app:layout_constraintTop_toBottomOf="@+id/editModelo"
+        tools:ignore="MissingClass" />
 
     <EditText
         android:id="@+id/editModelo"
@@ -102,7 +103,7 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="95dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/btnlimpar"
@@ -110,7 +111,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editCategoria"
-        app:layout_constraintVertical_bias="0.562" />
+        app:layout_constraintVertical_bias="0.562"
+        tools:ignore="MissingClass" />
 
     <Button
         android:id="@+id/btnSalvar"
